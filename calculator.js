@@ -2,22 +2,38 @@
 
 class Calculator {
   //write your code here
-  constructor () {
+  constructor (angka) {
+    this.number = angka
+    this.pi = Math.PI
   }
-  add () {
+  add (number) {
+    this.number += number
+    return this
   }
-  substract () {
+  substract (number) {
+    this.number -= number
+    return this
   }
-  multiply () {
+  multiply (number) {
+    this.number *= number
+    return this
   }
-  divide () {
+  divide (number) {
+    this.number /= number
+    return this
   }
-  square () {
+  square (number) {
+    this.number = Math.pow(this.number,number)
+    return this
   }
   squareRoot () {
+    this.number = Math.sqrt(this.number)
+    return this
+  }
+  getResult(){
+    return this.number
   }
 }
-
 /** note : you can use several features from ecmascript, such as:
 * - Classes
 * - Default Parameters
@@ -27,3 +43,6 @@ class Calculator {
 */
 
 module.exports = Calculator
+
+var cal = new Calculator(9)
+console.log(cal.add(3).multiply(3).substract(6))
