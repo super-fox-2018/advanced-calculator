@@ -2,19 +2,34 @@
 
 class Calculator {
   //write your code here
-  constructor () {
+  constructor (angka) {
+    this.number = angka
+    // this.phi = Math.PI
   }
-  add () {
+  add (number) {
+    this.number += number
+    return this
   }
-  substract () {
+  substract (number) {
+    this.number -= number
+    return this
   }
-  multiply () {
+  multiply (number) {
+
+    this.number *= number
+    return this
   }
-  divide () {
+  divide (number) {
+    this.number /= number
+    return this
   }
   square () {
+    this.number = Math.pow(this.number, number)
+    return this
   }
   squareRoot () {
+    this.number = Math.sqrt(this.number)
+    return this.number
   }
 }
 
@@ -26,4 +41,10 @@ class Calculator {
 * - Method Chaining
 */
 
-module.exports = Calculator
+module.exports = {
+  Calculator
+}
+
+let sum = new Calculator(8);
+// console.log(result.substract(10));
+console.log(sum.add(9).substract(4).multiply(7));
