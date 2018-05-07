@@ -2,19 +2,45 @@
 
 class Calculator {
   //write your code here
-  constructor () {
+  constructor() {
+    this.number = 0;
+    this.phi = 3.14;
   }
-  add () {
+  add(number) {
+    this.number = this.number + number;
+    return this;
   }
-  substract () {
+  substract(number) {
+    this.number = this.number + number;
+    return this;
   }
-  multiply () {
+  multiply(number) {
+    this.number = this.number * number;
+    return this;
   }
-  divide () {
+  divide(number) {
+    this.number = this.number / number;
+    return this;
   }
-  square () {
+  square() {
+    this.number *= this.number;
+    return this;
   }
-  squareRoot () {
+  squareRoot() {
+    this.number = Math.sqrt(this.number);
+    return this;
+  }
+
+  power(num) {
+    let number = this.number
+    for (let i = 1; i < num; i++) {
+      this.number *= number;
+    }
+    return this;
+  }
+
+  getResult() {
+    return this.number;
   }
 }
 
@@ -25,5 +51,10 @@ class Calculator {
 * - Template Literals
 * - Method Chaining
 */
+
+let myCalculator = new Calculator();
+
+console.log(myCalculator.add(2).substract(1).multiply(2).square().squareRoot().power(2).multiply(myCalculator.phi));
+console.log(`result: ${myCalculator.getResult()}`);
 
 module.exports = Calculator
