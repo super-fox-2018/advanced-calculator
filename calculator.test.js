@@ -1,6 +1,6 @@
 const assert = require('assert')
 
-const { Calculator } = require('./calculator.js')
+const Calculator = require('./calculator.js')
 
 describe('Test features', () => {
   const calc = new Calculator()
