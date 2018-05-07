@@ -3,18 +3,32 @@
 class Calculator {
   //write your code here
   constructor () {
+    this.number = this.data;
+    this.pi = 3.14; // constant pi
   }
-  add () {
+  add (num) {
+    this.number += num;
+    return this;
   }
-  substract () {
+  substract (num) {
+    this.number -= num;
+    return this;
   }
-  multiply () {
+  multiply (num) {
+    this.number *= num;
+    return this;
   }
-  divide () {
+  divide (num) {
+    this.number /= num;
+    return this;
   }
-  square () {
+  power (num) {
+    this.number = Math.pow(this.number, num);
+    return this;
   }
   squareRoot () {
+    this.number = Math.sqrt(this.number);
+    return this;
   }
 }
 
@@ -26,4 +40,9 @@ class Calculator {
 * - Method Chaining
 */
 
-module.exports = Calculator
+const calculator = new Calculator(7);
+
+console.log(calculator.power(2).multiply(calculator.pi).number);
+console.log(calculator.data);
+
+// module.exports = Calculator;
