@@ -1,20 +1,47 @@
 'use strict'
 
 class Calculator {
-  //write your code here
-  constructor () {
+  constructor (num=1) { // dikasih nilai default 1, jadi misal lupa isi yg di calculator yg dibawah lngsung isi 1
+    this.num=num
+    
   }
-  add () {
+  add (num) {
+    this.num += num
+    return this
   }
-  substract () {
+  substract (num) {
+    this.num -= num
+    return this
   }
-  multiply () {
+  multiply (num) {
+    this.num *= num
+    return this
   }
-  divide () {
+  divide (num) {
+    this.num /= num
+    return this
   }
-  square () {
+  square () { // ini nggak pkai parameter karena sudah pasti pangkat 2
+    this.num *=this.num 
+    return this
+  }
+  pangkat (num) { // kalau ini yang pangkatnya bisa dirubah mau pangkat 3, 4 dst makanya pakai Math.pow()
+    this.num = Math.pow(this.num, num)
+    return this
   }
   squareRoot () {
+    this.num=Math.sqrt(this.num)
+    return this
+  }
+  luasLingkaran(){
+    this.pi = 3,14;
+    this.num= this.pi*(Math.pow(this.num,2)) //
+    return this
+  }
+  kelilingLingkaran(){
+    this.pi = 3,14
+    this.num= 2*this.pi*this.num
+    return this
   }
 }
 
@@ -27,3 +54,7 @@ class Calculator {
 */
 
 module.exports = Calculator
+var resultCalculator = new Calculator(0) // hasil dimulai dari 0
+console.log(resultCalculator.add(2).num) // kasih .num dibelakang untuk liat hasil akhir, klu nggak ada .num yang kluar nanti object
+console.log(resultCalculator.square(2).num)
+console.log(resultCalculator.pangkat(3).num)
