@@ -2,19 +2,36 @@
 
 class Calculator {
   //write your code here
-  constructor () {
+  constructor (angka) {
+    this.num = angka||2;
   }
-  add () {
+  add (tambah) {
+    this.num += tambah;
+    return this;
   }
-  substract () {
+  substract (kurang) {
+    this.num -= kurang;
+    return this;
   }
-  multiply () {
+  multiply (kali) {
+    this.num *= kali;
+    return this;
   }
-  divide () {
+  divide (bagi) {
+    this.num /= bagi;
+    return this;
   }
-  square () {
+  square (pangkat) {
+    this.num = Math.pow(this.num,pangkat);
+    return this;
   }
   squareRoot () {
+    this.num = Math.sqrt(this.num);
+    return this;
+  }
+  pi (){
+    this.num *= Math.PI;
+    return this;
   }
 }
 
@@ -25,5 +42,7 @@ class Calculator {
 * - Template Literals
 * - Method Chaining
 */
+var cal = new Calculator();
+console.log(cal.add(4).substract(2).multiply(7).divide(1).square(2).squareRoot().pi());
 
 module.exports = Calculator
