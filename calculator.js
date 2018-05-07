@@ -25,13 +25,13 @@ class Calculator {
     this.num *= this.num;
     return this;
   }
-  toThePowerof(n) {
-    const num = this.num;
-    let str = '';
-    for (let i = 1; i < n; i += 1) {
-      this.num *= num;
-    }
-
+  toThePowerOf(n) {
+    // const num = this.num;
+    // let str = '';
+    // for (let i = 1; i < n; i += 1) {
+    //   this.num *= num;
+    // }
+    this.num = Math.pow(this.num, n);
     return this;
   }
   squareRoot () {
