@@ -46,6 +46,9 @@ class Calculator {
     this.number = value;
     return this;
   }
+  getResult() {
+    return this.number
+  }
 
   //count() {}
 }
