@@ -55,6 +55,4 @@ class Calculator {
 
 module.exports = Calculator
 var resultCalculator = new Calculator(0) // hasil dimulai dari 0
-console.log(resultCalculator.add(2).num) // kasih .num dibelakang untuk liat hasil akhir, klu nggak ada .num yang kluar nanti object
-console.log(resultCalculator.square(2).num)
-console.log(resultCalculator.pangkat(3).num)
+console.log(resultCalculator.add(2).square(2).pangkat(3).num) // kasih .num dibelakang untuk liat hasil akhir, klu nggak ada .num yang kluar nanti object
