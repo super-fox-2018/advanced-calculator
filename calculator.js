@@ -2,19 +2,51 @@
 
 class Calculator {
   //write your code here
-  constructor () {
+  constructor (num) {
+    this.num = num || 1;
   }
-  add () {
+  add (num) {
+    this.num += num;
+    return this;
   }
-  substract () {
+  substract (num) {
+    this.num -= num;
+    return this;
   }
-  multiply () {
+  multiply (num) {
+    this.num *= num;
+    return this;
   }
-  divide () {
+  divide (num) {
+    this.num /= num;
+    return this;
   }
   square () {
+    this.num *= this.num;
+    return this;
+  }
+  toThePowerof(n) {
+    const num = this.num;
+    let str = '';
+    for (let i = 1; i < n; i += 1) {
+      this.num *= num;
+    }
+
+    return this;
   }
   squareRoot () {
+    this.num = Math.sqrt(this.num);
+    return this;
+  }
+
+  nthRootOf(root) {
+    this.num = Math.pow(this.num, 1/root);
+    return this;
+  }
+
+  pi() {
+    this.num *= Math.PI;
+    return this;
   }
 }
 
@@ -26,4 +58,6 @@ class Calculator {
 * - Method Chaining
 */
 
-module.exports = Calculator
+module.exports = {
+  Calculator
+}
